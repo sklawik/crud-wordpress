@@ -22,9 +22,8 @@ services:
     networks:
       - app-network
 networks:
-  app-network: {}
-  dokploy-network:
-    external: true
+  app-network:
+    driver: bridge
 
 volumes:
   db-data:
