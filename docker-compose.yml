@@ -22,7 +22,9 @@ services:
     networks:
       - app-network
 networks:
-  app-network:
+  app-network: {}
+  dokploy-network:
+    external: true
 
 volumes:
   db-data:
