@@ -11,10 +11,12 @@ services:
       - app-network
 
   db:
-    image: mysql:8
+    image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: tiger
       MYSQL_DATABASE: my_database
+    volumes:
+      - db-data:/var/lib/mysql
     ports:
       - "3306:3306"
     networks:
