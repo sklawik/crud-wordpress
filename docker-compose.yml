@@ -33,4 +33,4 @@ networks:
     external: true
 
 volumes:
-  db-data2:
+  db-data3:
