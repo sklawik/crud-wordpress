@@ -11,7 +11,7 @@ services:
       - app-network
       - dokploy-network
     labels:
-      - traefik.enable=true
+      - traefik.enable=false
       - traefik.http.routers.phptodolist.rule=Host(`sklawik.pl`)
       - traefik.http.routers.phptodolist.entrypoints=web
       - traefik.http.services.phptodolist.loadbalancer.server.port=80
