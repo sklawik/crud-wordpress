@@ -32,7 +32,7 @@ services:
 
 networks:
   app-network:
-    driver: host
+    driver: none
 
 volumes:
   db-data4:
