@@ -31,7 +31,8 @@ services:
       retries: 5
 
 networks:
-  app-network: external
+  app-network:
+   driver: external
 
 volumes:
   db-data4:
