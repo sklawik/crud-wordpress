@@ -6,8 +6,7 @@ services:
     volumes:
       - ./src:/var/www/html/
     depends_on:
-      db:
-        condition: service_healthy
+      - db
     networks:
       - app-network
 
@@ -15,24 +14,16 @@ services:
     image: mysql:8
     environment:
       MYSQL_DATABASE: my_database
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: test123
-      MYSQL_ROOT_PASSWORD: roottest123
+      MYSQL_DB_USER: wordpress
     volumes:
       - db-data4:/var/lib/mysql
     ports:
       - "3306:3306"
     networks:
       - app-network
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
 networks:
   app-network:
-   driver: bridge
+    driver: bridge
 
 volumes:
   db-data4:
