@@ -32,7 +32,6 @@ services:
 
 networks:
   app-network:
-    driver: container
 
 volumes:
   db-data4:
