@@ -6,7 +6,8 @@ services:
     volumes:
       - ./src:/var/www/html/
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     networks:
       - app-network
 
@@ -23,6 +24,12 @@ services:
       - "3306:3306"
     networks:
       - app-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
 networks:
   app-network:
     driver: bridge
