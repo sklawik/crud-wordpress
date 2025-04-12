@@ -13,8 +13,8 @@ services:
   db:
     image: mysql:8
     environment:
-      MYSQL_ROOT_PASSWORD: tiger
       MYSQL_DATABASE: my_database
+      MYSQL_DB_USER: wordpress
     volumes:
       - db-data4:/var/lib/mysql
     ports:
