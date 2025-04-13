@@ -6,17 +6,17 @@ services:
     volumes:
       - ./src:/var/www/html/
     depends_on:
-      - db
+      - phpdb
     networks:
       - app-network
 
-  db:
+  phpdb:
     image: mysql:8
     environment:
+      MYSQL_ROOT_PASSWORD: tiger
       MYSQL_DATABASE: my_database
-      MYSQL_DB_USER: wordpress
     volumes:
-      - db-data4:/var/lib/mysql
+      - phpdb-data5:/var/lib/mysql
     ports:
       - "3306:3306"
     networks:
@@ -26,4 +26,4 @@ networks:
     driver: bridge
 
 volumes:
-  db-data4:
+  phpdb-data5:
