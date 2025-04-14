@@ -9,18 +9,21 @@ services:
       - phpdb
     networks:
       - app-network
+    env_file: .env
 
   phpdb:
     image: mysql:8
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: my_database
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     volumes:
       - phpdb-data5:/var/lib/mysql
     ports:
       - "3306:3306"
     networks:
       - app-network
+    env_file: .env
+
 networks:
   app-network:
     driver: bridge
