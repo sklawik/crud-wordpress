@@ -13,7 +13,7 @@ services:
   phpdb:
     image: mysql:8
     environment:
-      MYSQL_ROOT_PASSWORD: tiger
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: my_database
     volumes:
       - phpdb-data5:/var/lib/mysql
