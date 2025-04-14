@@ -26,7 +26,7 @@ define( 'DB_NAME', 'my_database' );
 define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', getenv('MYSQL_ROOT_PASSWORD'));
+define( 'DB_PASSWORD', 'tiger' );
 
 /** Database hostname */
 define( 'DB_HOST', 'phpdb' );
