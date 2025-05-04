@@ -15,8 +15,9 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: tiger
       MYSQL_DATABASE: my_database
-    volumes:
-      - db-data:/var/lib/mysql
+
+    # ports:
+    #  # - "3306:3306"
     networks:
       - app-network
 networks:
