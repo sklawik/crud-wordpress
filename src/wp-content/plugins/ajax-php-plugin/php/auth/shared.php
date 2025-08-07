@@ -23,6 +23,10 @@ function fetchUserData($userId){
     if(session_status() === PHP_SESSION_NONE){
         session_start();
     }
+    if($_SESSION['user_id'] === null){
+        $_SESSION['adminLevel'] = 0;
+        
+    }
     $conn = getDatabaseConnection();
     $stmt = $conn->prepare('SELECT login, id, adminLevel FROM users WHERE id=?');
     $stmt->bind_param('s',$userId);
