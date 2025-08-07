@@ -1,7 +1,7 @@
 services:
   php:
     environment:
-      - WORDPRESS_DB_HOST=value
+      - WORDPRESS_DB_HOST=db
     build: .
     ports:
       - "8080:80"
