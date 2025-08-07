@@ -30,7 +30,7 @@ define('DB_USER', 'root');
 define('DB_PASSWORD', 'tiger');
 
 /** Database hostname */
-define('DB_HOST', 'phpdb');
+define('DB_HOST', 'db');
 
 /** Database charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
