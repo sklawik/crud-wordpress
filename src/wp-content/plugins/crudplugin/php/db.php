@@ -1,7 +1,6 @@
 <?php
 
 
-define('DB_HOST', getenv('WORDPRESS_DB_HOST') ?: 'db');
  
 function getDatabaseConnection()
 {
