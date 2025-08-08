@@ -1,16 +1,19 @@
 services:
-  php:
+  wordpress:
+    image: wordpress:php7.4-apache
     environment:
-      - WORDPRESS_DB_HOST=db
-    build: .
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: tiger
+      WORDPRESS_DB_NAME: my_database
     ports:
       - "8080:80"
-    volumes:
-      - ./src:/var/www/html/
     depends_on:
       - db
     networks:
       - app-network
+    volumes:
+      - ./src/wp-content:/var/www/html/wp-content
 
   db:
     image: mysql:8
@@ -20,12 +23,13 @@ services:
     volumes:
       - db-data:/var/lib/mysql
     ports:
-     - "3306:3306"
+      - "3306:3306"
     networks:
       - app-network
+
 networks:
   app-network:
     driver: bridge
+
 volumes:
   db-data:
-    
