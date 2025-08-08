@@ -1,9 +1,9 @@
 FROM php:7.4-apache
 RUN docker-php-ext-install mysqli
 
-RUN chmod -R 777 ./src
-COPY ./src/ /var/www/html/
 
+COPY ./src/ /var/www/html/
+RUN chmod -R 777 /var/www/html/
 
 
 RUN docker-php-ext-install mysqli
