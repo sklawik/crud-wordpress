@@ -1,5 +1,12 @@
 <?php
-
+if (
+    (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ||
+    (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+) {
+    $_SERVER['HTTPS'] = 'on';
+}
+define('WP_HOME', 'https://project.sklawik.pl');
+define('WP_SITEURL', 'https://project.sklawik.pl');
 /**
  * The base configuration for WordPress
  *
