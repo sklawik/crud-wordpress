@@ -23,10 +23,11 @@ while ($result && $row = $result->fetch_assoc()) {
         $_SESSION["user_id"] = $row["id"];
         $_SESSION["login"] = $row["login"];
         $_SESSION["adminLevel"] = $row["adminLevel"];
-        header("Location: /?msg=Zalogowano się. Witaj $login ($id)");
+        header("Location: /?msg=Zalogowano się. Witaj $login ({$row["id"]})");
         exit;
     } else {
         $query->close();
         redirectBackWithError("Wprowadzone dane są niepoprawne.");
+        exit;
     }
 }
