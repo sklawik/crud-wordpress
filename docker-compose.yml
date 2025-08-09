@@ -1,23 +1,23 @@
 services:
-wordpress:
-  image: .
-  volumes:
-    - ./src/wp-content/plugins:/var/www/html/wp-content/plugins
-    - ./src/wp-config.php:/var/www/html/wp-config.php
-  environment:
-    WORDPRESS_DB_HOST: db
-    WORDPRESS_DB_NAME: my_database
-    WORDPRESS_DB_USER: root
-    WORDPRESS_DB_PASSWORD: tiger
-    WORDPRESS_DEBUG: 0
-  depends_on:
-    db:
-      condition: service_healthy
-  ports:
-    - "8080:80"
-  networks:
-    - app-network
-  restart: unless-stopped
+  wordpress:
+    image: .
+    volumes:
+      - ./src/wp-content/plugins:/var/www/html/wp-content/plugins
+      - ./src/wp-config.php:/var/www/html/wp-config.php
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: my_database
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: tiger
+      WORDPRESS_DEBUG: 0
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+    restart: unless-stopped
 
   db:
     image: mysql:8
