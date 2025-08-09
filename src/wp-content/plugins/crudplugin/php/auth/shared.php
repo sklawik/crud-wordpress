@@ -2,7 +2,7 @@
 
 function redirectBackWithError($errorMessage)
 {
-    $url = "Location: /?page_id=14&err=" . urlencode($errorMessage);
+    $url = "Location: /?index.php/logowanie/&err=" . urlencode($errorMessage);
     header($url);
     exit;
 }
