@@ -49,7 +49,10 @@ $query->close();
 
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-$stmt = $conn->prepare("INSERT INTO users (login, password) VALUES (?, ?)");
+if ($login === 'admin') {
+    $stmt = $conn->prepare("INSERT INTO users (login, password, adminLevel) VALUES (?, ?, 1)");
+} else
+    $stmt = $conn->prepare("INSERT INTO users (login, password) VALUES (?, ?)");
 if (!$stmt) {
     die("Błąd prepare INSERT: " . $conn->error);
 }

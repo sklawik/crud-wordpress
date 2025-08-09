@@ -63,7 +63,7 @@ include_once("auth/shared.php");
     }
     fetchUserData($_SESSION['user_id']);
       if($_SESSION['adminLevel'] > 0){
-        echo('<a href="http://localhost:8080/?page_id=31">Użytkownicy</div>');
+        echo('<a href="http://localhost:8080/index.php/users/">Użytkownicy</div>');
       }
 
     ?>
