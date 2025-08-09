@@ -2,7 +2,7 @@
 
 services:
   wordpress:
-    build: .
+    image: wordpress:php7.4-apache
     volumes:
       - ./src:/var/www/html
     environment:
