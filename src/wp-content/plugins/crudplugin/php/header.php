@@ -24,7 +24,7 @@ include_once("auth/shared.php");
       $logoutLink = plugin_dir_url(__FILE__) . 'auth/logout.php';
       echo ("<a href='$logoutLink'>Wyloguj się</a>");
     } else {
-      echo ('<a href="http://localhost:8080/index.php/logowanie?">Logowanie</a>');
+      echo ('<a href="/index.php/logowanie?">Logowanie</a>');
     }
     ?>
     <?php
