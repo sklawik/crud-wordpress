@@ -58,6 +58,9 @@ a{
   #crudplugin-auth form {
     width: 100vw !important;
   }
+  #crudplugin-auth button{
+    width: 75%;
+  }
 }
 
 #crudplugin-auth input{
