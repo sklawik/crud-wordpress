@@ -2,9 +2,8 @@ services:
   wordpress:
     image: wordpress:php7.4-apache
     volumes:
-      - wordpress-core:/var/www/html
+      - ./src:/var/www/html
       - ./src/wp-config.php:/var/www/html/wp-config.php
-      - ./src/wp-content/plugins:/var/www/html/wp-content/plugins
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_NAME: my_database
