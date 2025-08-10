@@ -54,6 +54,12 @@ a{
     justify-items: center;
 }
 
+@media (max-width: 600px) {
+  #crudplugin-auth form {
+    width: 100% !important;
+  }
+}
+
 #crudplugin-auth input{
     padding: 0.5rem;
     width: 100%;
