@@ -2,6 +2,7 @@ services:
   wordpress:
     image: wordpress:php7.4-apache
     volumes:
+      - wordpress-data:/var/www/html
       - ./src/wp-config.php:/var/www/html/wp-config.php
       - ./src/wp-content/plugins:/var/www/html/wp-content/plugins
     environment:
@@ -43,3 +44,4 @@ networks:
 
 volumes:
   db-data:
+  wordpress-data:
