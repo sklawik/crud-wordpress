@@ -24,7 +24,7 @@ if ($deleteUser) {
     $stmt->bind_param('s',$id);
     $stmt->execute();
     $stmt->close();
-    header('Location: /?page_id=31');
+    header('Location: /index.php/users');
 } else {
     if (!isLoginSafe($newLogin)) {
         echo ('Login jest niepoprawny.'); 
@@ -34,7 +34,7 @@ if ($deleteUser) {
     $stmt->bind_param('ss', $newLogin, $id);
     $stmt->execute();
     $stmt->close();
-    header('Location: /?page_id=31');
+    header('Location: /index.php/users');
 }
 
 $conn->close();
