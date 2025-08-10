@@ -56,7 +56,7 @@ a{
 
 @media (max-width: 600px) {
   #crudplugin-auth form {
-    width: 100% !important;
+    width: 100vw !important;
   }
 }
 
