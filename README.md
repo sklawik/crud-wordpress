@@ -1,5 +1,5 @@
 # CRUD Wordpress
 
-Dane do logowania:
-Login: Administrator 
-Hasło: Admin2010!!
+Dane do logowania: 
+ Login: Administrator 
+ Hasło: Admin2010!!
